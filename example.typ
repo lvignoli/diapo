@@ -2,11 +2,10 @@
 
 #show: diapo.with(
 	title: "Elucidation of the mechanical energy",
-	// short_title: "The mechanical energy",
 	author: "Émilie du Châtelet",
 	date: "1759-04-19",
-	// accent_color: navy, 
 	// display_lastpage: false,
+	// short_title: "The mechanical energy",
 )
 
 = Introduction

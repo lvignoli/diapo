@@ -23,7 +23,7 @@
 
 #let diapo(
 	// The presentation's title, which is displayed on the title slide.
-	title: none,
+	title: [Title],
 
 	// The presentation's author, which is displayed on the title slide.
 	author: none,
