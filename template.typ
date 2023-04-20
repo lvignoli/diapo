@@ -20,7 +20,6 @@
 	]
 }
 
-
 #let diapo(
 	// The presentation's title, which is displayed on the title slide.
 	title: [Title],

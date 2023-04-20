@@ -2,13 +2,14 @@
 
 A simplistic [Typst](https://typst.app) template for presentations.
 
-Apply the template to your document with a global show rule using `diapo.with()`.
+Copy the [template](template.typ) to your project folder and start your document with a global show rule using `diapo.with()`.
 
 For a new slide with a title, use the first level heading syntax `= Title`. \
-For a new slide without a title, introduce a `pagebreak()`. \
+For a new slide without a title, use a `pagebreak()`. \
 To get a transition slide with additional impact, call `#transition[BANG]`.
 
-It is intentionally very basic.
+It is intentionally basic and not dynamic.
+Customize it to your liking if needed.
 
 ## Minimal document
 
