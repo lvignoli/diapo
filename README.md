@@ -53,4 +53,6 @@ It was exhausting.
 That was short.
 ```
 
-See also [the example document](example.pdf)
+This produces [the following presentation](example.pdf).
+
+See also [a longer example](long_example.typ).
