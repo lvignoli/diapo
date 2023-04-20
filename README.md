@@ -13,6 +13,8 @@ Customize it to your liking if needed.
 
 ## Minimal document
 
+[This example](example.pdf) is given by the folowing code:
+
 ```typst
 #import "template.typ": diapo, transition
 
@@ -52,7 +54,5 @@ It was exhausting.
 
 That was short.
 ```
-
-This produces [the following presentation](example.pdf).
 
 See also [a longer example](long_example.typ).
