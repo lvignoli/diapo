@@ -13,7 +13,7 @@ Customize it to your liking if needed.
 
 ## Minimal document
 
-[This example](example.pdf) is given by the folowing code:
+[This example](example.pdf) is given by the following code:
 
 ```typst
 #import "template.typ": diapo, transition
