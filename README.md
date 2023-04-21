@@ -43,7 +43,7 @@ It was great!
 
 #align(horizon)[
  #set text(size: 28pt)
- $ e^(i pi) - 1 = 0 $
+ $ e^(i pi) + 1 = 0 $
 ]
 
 = The journey back home
