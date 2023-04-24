@@ -8,7 +8,7 @@ For a new slide with a title, use the first level heading syntax `= Title`. \
 For a new slide without a title, use a `pagebreak()`. \
 To get a transition slide with additional impact, call `#transition[BANG]`.
 
-It is intentionally basic and not dynamic.
+It is intentionally basic and _not_ dynamic.
 Customize it to your liking if needed.
 
 ## Minimal document
