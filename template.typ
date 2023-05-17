@@ -2,7 +2,7 @@
 
 #let transition(
 	// The slide accent color. Default is a vibrant yellow.
-	accent_color: rgb("f3bc54"),
+	accent-color: rgb("f3bc54"),
 
 	// The slide content.
 	body,
@@ -10,7 +10,7 @@
 	page(
 		width: 15cm,
 		height: 10cm,
-		background: rect(width: 100%, height: 100%, fill: accent_color),
+		background: rect(width: 100%, height: 100%, fill: accent-color),
 		header: none,
 		footer: none,
 	)[
@@ -31,10 +31,10 @@
 	date: none,
 
 	// If true, display the total number of slide of the presentation.
-	display_lastpage: true,
+	display-lastpage: true,
 
 	// If set, this will be displayed on top of each slide.
-	short_title: none,
+	short-title: none,
 
 	// The presentation's content.
 	body
@@ -47,17 +47,17 @@
 	set page(
 		width: 15cm,
 		height: 10cm,
-		header: if short_title != none {
+		header: if short-title != none {
 			set align(right)
 			set text(size: scriptsize)
-			short_title
+			short-title
 		},
 		footer: [
-			#let lastpage_number = locate(pos => counter(page).final(pos).at(0))
+			#let lastpage-number = locate(pos => counter(page).final(pos).at(0))
 			#set align(right)
 			#text(size: scriptsize)[
 				*#counter(page).display("1")* 
-				#if (display_lastpage) [\/ #lastpage_number]
+				#if (display-lastpage) [\/ #lastpage-number]
 			]
 		],
 	)

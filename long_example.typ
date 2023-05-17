@@ -4,8 +4,8 @@
 	title: "Elucidation of the mechanical energy",
 	author: "Émilie du Châtelet",
 	date: "1759-04-19",
-	// display_lastpage: false,
-	// short_title: "The mechanical energy",
+	// display-lastpage: false,
+	// short-title: "The mechanical energy",
 )
 
 = Introduction
@@ -56,7 +56,7 @@ Top text
 
 Bottom text
 
-#transition(accent_color: navy)[We are about to conclude]
+#transition(accent-color: navy)[We are about to conclude]
 
 = Conclusion
 
