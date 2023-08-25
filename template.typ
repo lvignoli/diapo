@@ -44,9 +44,10 @@
 ) = {
 	// Prefer authors array over single author
 	authors = if (authors != none) { authors } else { ((name: author),) }
+	author = if (author != none) { author } else { authors.first().name }
 
 	// Set the metadata.
-	set document(title: title, author: authors.first().name)
+	set document(title: title, author: author)
 
 	// Configure page and text properties.
 	set text(font: "PT Sans", weight: "regular")
