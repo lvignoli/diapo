@@ -27,9 +27,6 @@
 	// The presentation's author, which is displayed on the title slide.
 	author: none,
 
-	// The presentation's authors, which are displayed on the title slide.
-	authors: none,
-
 	// The date, displayed on the title slide.
 	date: none,
 
@@ -42,12 +39,13 @@
 	// The presentation's content.
 	body
 ) = {
-	// Prefer authors array over single author
-	authors = if (authors != none) { authors } else { ((name: author),) }
-	author = if (author != none) { author } else { authors.first().name }
+	// Ensure that the type of `author` is an array
+	author = if type(author) == "string" { ((name: author),) }
+		else if type(author) == "array" { author }
+		else { panic("expected string or array, found " + type(author)) }
 
 	// Set the metadata.
-	set document(title: title, author: author)
+	set document(title: title, author: author.map(author => author.name))
 
 	// Configure page and text properties.
 	set text(font: "PT Sans", weight: "regular")
@@ -70,18 +68,18 @@
 	)
 
 	// Display the title page.
-	page(background: none, header: none, footer: none, {
-		set align(center+horizon)
-		set text(24pt, weight: "light")
-		title
+	page(background: none, header: none, footer: none)[
+		#set align(center+horizon)
+		#set text(24pt, weight: "light")
+		#title
 
-		set text(14pt)
-		let count = authors.len()
-		let ncols = calc.min(count, 3)
-		grid(
+		#set text(14pt)
+		#let count = author.len()
+		#let ncols = calc.min(count, 3)
+		#grid(
 			columns: (1fr,) * ncols,
 			row-gutter: 24pt,
-			..authors.map(author => {
+			..author.map(author => {
 				author.name
 				if (author.keys().contains("affiliation")) {
 					linebreak()
@@ -94,8 +92,8 @@
 			}),
 		)
 
-		text(features: ("case",))[#date]
-	})
+		#text(features: ("case",))[#date]
+	]
 
 	// Customize headings to show new slides.
 	show heading: set text(font: "Avenir")
