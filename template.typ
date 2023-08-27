@@ -77,7 +77,8 @@
 		#let count = author.len()
 		#let ncols = calc.min(count, 3)
 		#grid(
-			columns: (1fr,) * ncols,
+			columns: (auto,) * ncols,
+			column-gutter: 16pt,
 			row-gutter: 24pt,
 			..author.map(author => {
 				author.name
