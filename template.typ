@@ -39,8 +39,13 @@
 	// The presentation's content.
 	body
 ) = {
+	// Ensure that the type of `author` is an array
+	author = if type(author) == "string" { ((name: author),) }
+		else if type(author) == "array" { author }
+		else { panic("expected string or array, found " + type(author)) }
+
 	// Set the metadata.
-	set document(title: title, author: author)
+	set document(title: title, author: author.map(author => author.name))
 
 	// Configure page and text properties.
 	set text(font: "PT Sans", weight: "regular")
@@ -69,7 +74,24 @@
 		#title
 
 		#set text(14pt)
-		#author
+		#let count = author.len()
+		#let ncols = calc.min(count, 3)
+		#grid(
+			columns: (auto,) * ncols,
+			column-gutter: 16pt,
+			row-gutter: 24pt,
+			..author.map(author => {
+				author.name
+				if (author.keys().contains("affiliation")) {
+					linebreak()
+					author.affiliation
+				}
+				if (author.keys().contains("email")) {
+					linebreak()
+					link("mailto:" + author.email)
+				}
+			}),
+		)
 
 		#text(features: ("case",))[#date]
 	]
