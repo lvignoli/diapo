@@ -97,7 +97,7 @@
 	]
 
 	// Customize headings to show new slides.
-	show heading: set text(font: "Avenir")
+	show heading: set text(font: ("Avenir", "Inter Display", "Inter", "Arial"))
 	show heading.where(level: 1): it => {
 		pagebreak()
 		align(top, it)
